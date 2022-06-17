@@ -1,0 +1,16 @@
+field	cohesion	:extra:cohesion	.2f
+fieldlist	gui
+:extra:name
+:type:	
+:missing:	[wmissing]
+:density:	[wtype_B]
+:categories:	[wtype_C]
+:min:	[wtype_N]
+:max:	[wtype_N]
+cohesion	[wxtr_geoplus]
+fieldlist	statsactive
+active:len:rids
+active:sum:vect	[wtype_B]
+active:set:vals	[wtype_C]
+active:min:vect	[wtype_N]
+active:max:vect	[wtype_N]

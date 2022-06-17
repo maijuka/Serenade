@@ -1,0 +1,25 @@
+actionlist	row_redundant
+filterPairs	max=0	PAIR:active:rowsF:I>CSTR:max_overlap_rows
+actionlist	area_redundant
+filterPairs	max=0	PAIR:active:overlap:P>CSTR:max_overlap_area
+actionlist	_nextge
+filterSingle	ITEM::nbAvC:=int:0
+sort	reverse=1	ITEM::acc:
+cut	max=CSTR:batch_cap	direction=0	ITEM::acc:
+actionlist	_partial
+filterSingle	reverse=1	ITEM::len:O>=CSTR:min_itm_out	ITEM::len:I>=CSTR:min_itm_in	ITEM::pval:<=CSTR:max_fin_pval
+sort	reverse=1	ITEM::acc:	ITEM:-BOTH:len:q	ITEM:-:diffLengthQs:
+filterPairs	max=0	PAIR::superceding:
+cut	max=CSTR:batch_out	direction=1	ITEM::acc:	ITEM:-BOTH:len:q	ITEM:-:diffLengthQs:
+actionlist	_tree_rectangles
+filterPairs	max=0	PAIR::sameRectangles:
+actionlist	_final
+sort	reverse=1	ITEM::acc:	ITEM:-BOTH:len:q	ITEM:-:diffLengthQs:
+actionlist	final_selection
+list	_final
+actionlist	partial_selection
+list	_partial	
+actionlist	prune
+applyBulk	function=getPruned
+actionlist	normalize
+applyBulk	function=getNormalized

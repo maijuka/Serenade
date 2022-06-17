@@ -1,0 +1,3 @@
+field	accI_mean	2./((1./(all:acc:))+(1./(all:ratio:I)))	.2f
+field	accU_mean	2./((1./(all:acc:))+(1./(all:ratio:U)))	.2f
+

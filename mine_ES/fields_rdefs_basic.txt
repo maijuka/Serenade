@@ -1,0 +1,60 @@
+#### field specifications for displaying redescriptions
+field	acc_ratioTL	test:acc:/learn:acc:	.2f
+field	len_I_ratioTA	test:len:I/(1.*all:len:I)	.2f
+field	cohesion	:extra:cohesion	.2f
+fieldlist	queries
+LHS:query:
+RHS:query:
+COND:query:	[wcond]
+fieldlist	cardsall
+all:card:Y	Y={Ex*}[wmissing]{Em*}
+fieldlist	cardspriv
+private:card:Y	Y={Ex*}[wmissing]{Em*}
+fieldlist	cards
+X:card:Y	Y={Ex*}[wmissing]{Em*} X=[wfolds]{test,learn}{all}[wcond]{cond}
+X:card:Y	Y={L,R,A,B,U,I} X=[wfolds]{test,learn}{all}[wcond]{cond}
+fieldlist	percsall
+all:perc:Y	Y={Ex*}[wmissing]{Em*}
+fieldlist	percs
+X:perc:Y	Y={Ex*}[wmissing]{Em*} X=[wfolds]{test,learn}{all}[wcond]{cond}
+X:perc:Y	Y={L,R,A,B,U,I} X=[wfolds]{test,learn}{all}[wcond]{cond}
+fieldlist	suppsall
+all:supp:Y	Y={Ex*}[wmissing]{Em*}
+fieldlist	supps
+X:supp:Y	Y={Ex*}[wmissing]{Em*} X=[wfolds]{test,learn}{all}[wcond]{cond}
+X:supp:Y	Y={L,R,A,B,U,I} X=[wfolds]{test,learn}{all}[wcond]{cond}
+fieldlist	areas
+X:area:Y	Y={L,R,A,B,U,I} X=[wfolds]{test,learn}{all,active}
+fieldlist	statsall
+all:acc:	
+all:len:I	
+all:pval:	
+fieldlist	stats
+X	[wfolds] X={acc_ratioTL,len_I_ratioTA}
+X:acc:	X=[wfolds]{test,learn}{all}[wcond]{cond}
+X:len:I	X=[wfolds]{test,learn}{all}[wcond]{cond}
+X:pval:	X=[wfolds]{test,learn}{all}[wcond]{cond}	
+fieldlist	statsactive
+X	[wfolds] X={acc_ratioTL,len_I_ratioTA}
+X:acc:	X=[wfolds]{test,learn}{active}[wcond]{cond}
+X:len:I	X=[wfolds]{test,learn}{active}[wcond]{cond}
+X:perc:I	X=[wfolds]{test,learn}{active}[wcond]{cond}
+X:pval:	X=[wfolds]{test,learn}{active}[wcond]{cond}
+fieldlist	basic #### fields list for text export
+:rid:
+list	queries
+X:Y:	Y={acc,pval} X=[wfolds]{test,learn}{all,private}[wcond]{cond}
+X	[wfolds] X={acc_ratioTL,len_I_ratioTA}
+cohesion	[wxtr_geoplus]
+list	cardsall
+list	cardspriv
+fieldlist	gui
+list	queries
+X	[wfolds] X={acc_ratioTL,len_I_ratioTA}
+cohesion	[wxtr_geoplus]
+list	statsactive
+fieldlist	tex
+list	queries
+X:acc:	X=[wfolds]{test,learn}{all}[wcond]{cond}
+X:len:I	X=[wfolds]{test,learn}{all}[wcond]{cond}
+X:pval:	X=[wfolds]{test,learn}{all}[wcond]{cond}
