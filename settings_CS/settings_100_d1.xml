@@ -1,0 +1,82 @@
+<root>
+<parameter>
+	<name>mining_algo</name>
+	<info>Algorithm to use for mining, greedy ReReMi or based on classification trees (restrictions apply). (single option in {reremi,layeredtrees,splittrees,cartwheel,fim})</info>
+	<value>reremi</value>
+</parameter>
+<parameter>
+        <name>data_rep</name>
+        <value>/data/</value>
+</parameter>
+<parameter>
+	<name>LHS_data</name>
+	<info>Complete filename for the left hand side data. (open text)</info>
+	<value>data_LHS.csv</value>
+</parameter>
+<parameter>
+	<name>RHS_data</name>
+	<info>Complete filename for the right hand side data. (open text)</info>
+	<value>data_RHS.csv</value>
+</parameter>
+<parameter>
+	<name>NA_str</name>
+	<info>String representation for missing values (CSV format). (open text)</info>
+	<value>nan</value>
+</parameter>
+<parameter>
+	<name>delim_in</name>
+	<info>Field delimiter (CSV format). (single option in {(auto),TAB,;,,,SPC})</info>
+	<value>(auto)</value>
+</parameter>
+<parameter>
+	<name>result_rep</name>
+	<info>Repertory where to save the results. (open text)</info>
+	<value>results/</value>
+</parameter>
+<parameter>
+	<name>out_base</name>
+	<info>Name of the file where to store the results. (open text)</info>
+	<value>totalbudget_100_budgetdist_d1</value>
+</parameter>
+<parameter>
+         <name>queries_named_file</name>
+         <value>+</value>
+</parameter>
+<parameter>
+	<name>logfile</name>
+	<info>File to log. + means generate filename from queries output file. - means stdout. (open text)</info>
+	<value>+</value>
+</parameter>
+<parameter>
+        <name>dp_budget</name>
+        <value>100</value>
+</parameter>
+<parameter>
+        <name>dp_budget_init</name>
+        <value>0.33</value>
+</parameter>
+<parameter>
+        <name>dp_budget_ext</name>
+        <value>0.33</value>
+</parameter>
+<parameter>
+        <name>dp_budget_qual</name>
+        <value>0.33</value>
+</parameter>
+<parameter>
+        <name>nb_init_pairs</name>
+        <value>20</value>
+</parameter>
+<parameter>
+        <name>nb_extension_rounds</name>
+        <value>4</value>
+</parameter>
+<parameter>
+        <name>log_k</name>
+        <value>0.02</value>
+</parameter>
+<parameter>
+        <name>x0_ratio</name>
+        <value>0.1</value>
+</parameter>
+</root>
